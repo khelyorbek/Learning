@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        background-color: #139cff;
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        border-radius: 7px;
+        display: inline-block;
+        font-family: helvetica;
+        /* transition: <property> (default all) <duration> <timing-function> (default ease) <delay> (default 0); */
+        transition: background-color 0.5s, color 0.5s linear,
+          border-radius 2s ease-out;
+        /* try playing around with the parameters in the value and see how the transition changes! */
+      }
+
+      a:hover {
+        background-color: #35ec5c;
+        color: black;
+        border-radius: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    CSS Animation vs JS Animation =
+    https://developers.google.com/web/fundamentals/design-and-ui/animations/css-vs-javascript
+    <br />
+    Using CSS Transitions =
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
+    <br />
+    More CSS Transitions = https://css-tricks.com/almanac/properties/t/transition/
+    <br>
+    <a href="">Click me!</a>
+  </body>
+</html>

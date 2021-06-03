@@ -1,0 +1,32 @@
+I ommited some things I already know
+
+The true width/height of an element is comprised of its width/height + padding + border. Margin is not counted when calculating the true width/height!
+
+div {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    padding: 20px;
+    border: 20px solid black;
+}
+
+/* True width =  width (200px) + padding-left(20px) + padding-right(20px) + border-left (20px) + border-right (20px) = 280px
+*/
+
+/* True height =  width (200px) + padding-top(20px) + padding-bottom(20px) + border-top (20px) + border-bottom (20px) = 280px
+*/
+
+Additional CSS properties
+Let's quickly examine two more properties pertaining to the box model: box-sizing and border-radius. First, take a look at this example:
+
+div {
+    box-sizing: border-box;
+}
+By default, the box-sizing property is set to content-box, which means that the width and height property values correspond to the width and height of the content area only. When set to border-box, however, the width and height property values correspond to the width and height of content + border + padding.
+
+Also, in CSS3 we can add rounded corners (and turn our boxes into rounded shapes) using the border-radius property:
+
+div {
+    background-color: blue;
+    border-radius: 10px;
+}

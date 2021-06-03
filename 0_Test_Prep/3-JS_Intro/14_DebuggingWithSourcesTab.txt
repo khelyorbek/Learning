@@ -1,0 +1,9 @@
+After you open the developer tools, you can click on the appropriate tab labeled Sources. The tab allows you, the developer, to see the javascript code that is being run on your website. With the developer tools, you have the ability to stop the code at a certain point to see exactly what values variables are holding as the code is being run.
+
+https://vimeo.com/184161238
+
+
+Additional Sources Tab Features
+If you would like to read more about the sources tab and some other useful tools you can find them at https://developers.google.com/web/tools/chrome-devtools/debug/breakpoints/step-code?hl=en
+
+CodeSchool also offers a free course on the Chrome Dev Tools which you can find at http://discover-devtools.codeschool.com/

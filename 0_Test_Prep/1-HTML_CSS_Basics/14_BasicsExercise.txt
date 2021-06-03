@@ -1,0 +1,11 @@
+Completed the plate challenge here > https://flukeout.github.io/
+Gave me a message: "You did it! You rock at CSS.".
+
+[for^="Sa"] 
+^ will find elements with an attribute that starts with Sa
+
+[for$="ra"]
+^ will find elements with an attribute that ends with ra
+
+[for*="yo"]
+^ will find elements with an attribute that contain yo

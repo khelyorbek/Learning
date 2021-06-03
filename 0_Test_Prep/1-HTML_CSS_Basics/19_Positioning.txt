@@ -1,0 +1,15 @@
+<html></html>
+
+By default, the position of an element is set to static. static positioning and relative positioning are basically the same, but with one important difference: a statically positioned element won't respond to the offset properties listed above. If you set top: 10px on an element that is statically positioned, this style rule will simply be ignored. 
+
+Absolute Positioning vs. Relative Positioning
+With relative positioning, elements are not removed from the document flow, and any offsets you place on the element will be relative to its default position in the document flow. In the above example, for instance, top is set to 100px; this means that the div will be 100 pixels below where it would otherwise be (in other words, you're offsetting the div 100 pixels from the top).
+With absolute positioning, the situation is a little different. In this case, the element is removed from the document flow, and any offsets you place on the element will be relative to its parent, provided its parent is not statically positioned! If the parent element is statically positioned, then the offsets will be relative to the grandparent, provided the grandparent is not statically positioned. If the grandparent is statically positioned, we keep going up the chain until we find an element that is not statically positioned. If no such element exists, the offsets are relative to the body.
+
+Fixed positioning
+The fourth type of positioning is fixed. This behaves similar to absolute positioning, but elements with fixed positioning are ALWAYS positioned relative to the active viewport. 
+
+STATIC EXAMPLE: https://codepen.io/eschoppik/pen/gxaNrK?editors=1100
+RELATIVE = relative to its original position.
+ABSOLUTE EXAMPLE: https://codepen.io/eschoppik/pen/ayvgZm?editors=1100#0
+FIXED EXAMPLE: https://codepen.io/eschoppik/pen/YxyoWE?editors=1100

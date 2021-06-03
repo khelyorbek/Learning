@@ -1,0 +1,44 @@
+Option 1: Use an online editor
+
+There are a number of websites out there that will let you write a larger chunk of code, then run it at the click of a button. Some popular ones are JS Bin, Repl.it, JS Fiddle, and CodePen. These aren't tools you'll be using to write extensive JavaScript applications, but they can be helpful learning tools to use until you get more comfortable combining HTML, CSS, and JavaScript.
+
+These tools do have a few quirks, though, and they all have a bit of a learning curve. So eventually it's probably best to move on to one of the following options.
+------------------------------------------------------------------------------------------------------------------------------
+Option 2: Include JavaScript in an HTML file
+
+Another option is to create an HTML file that we can save and edit, and include our JavaScript in that file. To get started, open up a text editor like VS Code and create a file with a .html extension (index.html for example). Save your file!
+
+Every HTML file needs a little bit of boilerplate to get started. For now, you can copy and paste the following code in your index.html file:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Test Site</title>
+<script>
+
+    alert("Hello, World!");
+
+</script>
+</head>
+<body>
+
+<p>Nothing going on yet.</p>
+
+</body>
+------------------------------------------------------------------------------------------------------------------------------
+Option 3: JavaScript and HTML in 2 Separate Files
+
+Another option is to keep your HTML and JavaScript in separate files. This is a better practice, especially as your HTML and JavaScript files get longer. To do this, you still need to include a script tag in your HTML, but now this tag should link to a separate JavaScript file. Here's how you could do that if you have a file called first.js:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Test Site</title>
+<script src="first.js"></script>
+</head>
+<body>
+
+<p>Nothing going on yet.</p>
+
+</body>
+</html>

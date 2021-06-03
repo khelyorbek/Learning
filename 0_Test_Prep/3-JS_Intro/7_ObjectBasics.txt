@@ -1,0 +1,104 @@
+Notice the format of an object. It has a key, followed by a colon, followed by a value, then a comma. But the last key and value in the object omits the comma. Forgetting the comma is an error that you may run into from time to time. Try putting the following in your console. You should see an error, Uncaught SyntaxError: Unexpected identifier, because there is no comma after the firstName key and value:
+    let firstObj = {
+        firstName: "Tim",  // COMA 
+        lastName: "Garcia", // COMA
+        isInstructor: true // NO COMA
+    };
+
+______________________________________________________
+
+Accessing Object Values
+To access values in an object, we could use the dot notation:
+    firstObj.firstName;       // returns "Tim"
+    firstObj.lastName;        // returns "Garcia"
+    firstObj.isInstructor;    // returns true
+    firstObj.keyDoesntExist;  // returns undefined
+
+Or we could use the bracket notation:
+    firstObj["firstName"];       // returns "Tim"
+    firstObj["lastName"];        // returns "Garcia"
+    firstObj["isInstructor"];    // returns true
+    firstObj["keyDoesntExist"];  // returns undefined
+
+So which one should we use? Well, best practice is to use the dot notation if you can use it. But there are cases in which you'll need to use bracket notation. Let's take a look at this example:
+    let obj = {};
+    let person = "Tom";
+
+    obj[person] = "This is a person";
+    obj[1+1+1] = "Three";
+
+    obj;
+
+
+    /*
+    obj now should look like this:
+    {
+        Tom: "This is a person",
+        3: "Three"
+    }
+    */
+
+    obj.3;// Syntax Error! Can't use the dot notation
+    obj[3]; // "Three" - we NEED to use the bracket notation
+    obj[person]; // "This is a person"
+    obj["Tom"]; // "This is a person"
+    obj.person; // undefined
+
+In short, use the bracket notation when you need to evaluate some expression or pass in a variable to get the name of the key, but when you know the name of the key and it is not a variable or expression, always use the dot notation.
+
+______________________________________________________
+
+Keys Are Always Strings in JavaScript
+It is important to note that the type of a key in JavaScript is always a string. Let's say we create the following object of some employee id to the employee name:
+    let idToName = {
+        754: "Tim",
+        843: "Matt",
+        921: "Janey",
+        192: "Elie"
+    };
+
+Now we want to access the key 754 to get the value "Tim". We cannot use the dot notation for this:
+    idToName.754;  // causes an error
+
+Instead we need to use the bracket notation. And the value inside the bracket notation is a string:
+    idToName["754"];  // returns "Tim"
+
+So even though we did not quote the key name when we created the idToName object, JavaScript automatically converts the number into a string. 
+!!! Every key in a JavaScript object is a string! !!!
+
+______________________________________________________
+
+Adding to objects - objectname.whatYouWantToAdd = "Value of object";
+To add properties or functions (which are sometimes called methods) to our objects, we can use the . or [] operator (as before, the dot notation is preferred, but not always possible).
+    let obj = {
+        name: "Jon Snow",
+        watchMember: true
+    };
+
+    obj.gameOfThrones = "awesome";
+    obj;
+    /*
+    {
+        name: "Jon Snow",
+        watchMember: true,
+        gameOfThrones: "awesome"
+    }
+    */
+
+______________________________________________________
+
+Removing from objects - delete objectname.whatYouWantToRemove
+We can remove a key from an object by using the delete keyword. Here's an example:
+    let obj = {
+        name: "Elie",
+        job: "Instructor"
+    };
+
+    delete obj.job; // returns true
+
+    obj;
+    /*
+    {
+        name: "Elie"
+    }
+    */
