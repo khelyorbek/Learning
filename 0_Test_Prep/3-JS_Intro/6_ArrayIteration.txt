@@ -1,3 +1,6 @@
+FOR OF = arrays and strings
+FOR IN = objects
+
 For...of, a more modern loop
 In 2015, JavaScript introduced a simpler kind of loop that allows you to iterate with less code. It's called for...of loop, and it looks like this:
     let names = ["Elie", "Matt", "Tim"];
@@ -27,7 +30,7 @@ Strings Revisited
 Now that we've learned about arrays, let's briefly return to strings and compare and contrast these two data types. They do have some similarities, but it's important to understand their differences as well.
 
 Looping over strings - FOR OF
-!!! FOR IN IS NOT USED FOR ARRAYS. ONLY USE FOR OF !!!
+!!! ONLY USE FOR OF for Strings and Arrays !!! FOR IN is used only for objects  !!!
 Just like we can iterate over arrays (and objects), we can also iterate over strings! Since strings have a length property, we always know at what point to stop looping, just like with arrays. Let's see an example of looping over a string:
     let name = "Elie";
 
