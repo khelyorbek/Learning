@@ -1,0 +1,67 @@
+To write an array in JavaScript, you use square brackets [] and comma separate each value in the array. Here are some examples:
+    let primes = [2, 3, 5, 7, 11];
+    let names = ["Alice", "Bob", "Charlie"];
+    let booleans = [true, false, false, true];
+    let mixedTypes = [1, "sweet", true, null, NaN, "bye!"];
+    let woahhh = ["What's up with this? -->", ["Woah", "crazy!"]];
+    let emptyArray = [];
+
+Find the length of an array: .length
+______________________________________________________
+
+Adding to arrays
+There are a number of ways you can add elements to an array.
+
+One way is by setting a value at a new index in the array.
+    let arr = [1,2,3];
+    arr[3] = 4;
+    arr; // [1,2,3,4]
+
+Be careful with this approach, though -- you can add an element at any index, and any elements that don't have values in them will be filled with undefined values.
+    let arr = [1,2,3];
+    arr[5] = "whoa";
+    arr; // [1, 2, 3, undefined, undefined, "woah"]
+
+ADD TO THE END OF ARRAY - PUSH
+    let arr = [3, 2, 5];
+    arr.push(7); // returns the new length, i.e. 4
+    arr; // [3, 2, 5, 7]
+
+ADD TO THE BEGINNING OF ARRAY - UNSHIFT
+    let arr = [1,2,3];
+    arr.unshift(0); // returns the new length, i.e. 4
+    arr; // [0,1,2,3]
+______________________________________________________
+Removing from arrays
+REMOVE FROM  THE END OF ARRAY - POP
+    let arr = [1,2,3];
+    arr.pop(); // returns 3
+    arr; // [1,2]
+
+REMOVE FROM THE BEGINNING OF ARRAY - SHIFT
+    let arr = [1,2,3];
+    arr.shift(); // returns 1
+    arr; // [2,3]
+
+SETTING index of array to undefined - DELETE
+    let arr = [5, 4, 3, 2];
+    delete arr[1];
+    arr; // [5, undefined, 3, 2]
+______________________________________________________
+Removing/Adding or both with splice
+The splice method accepts at least two arguments. 
+    The first argument is the starting index, indicating where values will be removed or added. 
+    The second parameter is the number of values to remove. 
+    Optionally, you can pass in an unlimited number of additional arguments; these correspond to values you'd like to add to the array. 
+    The splice method always returns/outputs an array of the removed elements. Here are some examples:
+        let arr = [1,2,3,4];
+        arr.splice(0,1); // returns [1]
+        arr; // [2,3,4]
+
+        let arr = [1,2,3,4];
+        arr.splice(0,1,5); // returns [1]
+        arr; // [5,2,3,4]
+
+        let arr = ["a","b","c","d"];
+        arr.splice(1,2,"x","y","z"); // ["b", "c"]
+        arr; // ["a", "x", "y", "z", "d"]

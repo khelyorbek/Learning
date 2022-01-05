@@ -1,0 +1,73 @@
+Common JavaScript Errors
+Let's look at four common errors we encounter when writing JavaScript. You have probably seen quite a few of these before!
+
+SyntaxError - occurs when we make a mistake with our syntax:
+    let x = "hello";
+
+    let wrongObj = {
+        name: "foo"
+        missingComma: true
+    };
+
+ReferenceError - occurs when we try to access a variable that does not exist in that scope. In the example below, we will try to access a variable called amazing which has not yet been initialized. We will then try to access a variable called secret outside of its scope. Let's see what that looks like:
+    amazing; // ReferenceError - does not exist in the global scope
+
+    function defineSomething(){
+        let secret = "I'll never tell";
+    }
+
+    defineSomething();
+
+    secret; // ReferenceError - only exists in the scope of the defineSomething function
+
+TypeError - occurs when you make incorrect use of certain types in javascript. That could mean trying to invoke something that is not a function, or accessing properties on undefined. Here are some very common examples (many of them we guarantee you will make!)
+    undefined(); // TypeError - undefined is NOT a function!
+
+    let obj = {
+        name: "Elie"
+    };
+
+    obj.something; // this actually returns undefined! What does that tell us? If you try to access a property on an object and it does not exist, you do NOT get a ReferenceError, you just get undefined
+
+    obj.something.foo; // but when you try to access a property on `undefined`... well, that's a TypeError.
+
+    obj.something(); this is a TypeError for the same reason that undefined() is, since obj.something is undefined!
+
+RangeError - occurs when we have a function that calls itself (also known as a recursive function). If we have too many functions that have been called (before they are returned) we run out of memory and cause a RangeError.
+    function callMe(){
+        callMe();
+    }
+
+    callMe(); // maximum call stack size exceeded. We will talk more about the call stack and recursion in a later section.
+
+______________________________________________________
+
+Catching and Throwing Errors in JavaScript
+When an error is thrown, our code stops executing. Sometimes we don't know if our code is going to throw an error or not, so instead of our code crashing and not continuing to run, we might want to gracefully handle our errors. We call this "catching" our errors. To do this we use a try / catch statement. We place code inside of the try block (a block is defined as code inside of a {}) and if an error is thrown, the code moves to the catch block. After the catch block, code continues to execute.
+    try {
+        thisDoesNotExist;
+    } catch(e) {
+        console.log("The error is ", e);
+    }
+
+On the other hand, when developing applications or libraries, we sometimes want to throw an error when something is done incorrectly in our application. To return an error and stop code execution, we use the throw keyword followed by an error object. Optionally, we can add a message string to the error to give more details about what went wrong.
+    throw ReferenceError("That variable does not exist!");
+
+Another way to specify an error is to use the throw keyword followed by a string:
+    throw "This will also be an error";
+
+finally
+With our try/catch block, we saw that the code in the try block will move to the catch block if an error occurs inside of it. In our try/catch statements, we can add one more special keyword called finally. Inside of the finally block, code will execute regardless of an error being thrown.
+    try {
+        // let's randomly try to throw an error
+        if(Math.random() >= .5){
+            // The following code will throw:
+            // Uncaught TypeError: undefined is not a function(…)
+            undefined();
+        }
+        console.log("Whew, we made it");
+    } catch(e){
+    console.log("We didn't make it. The error message is", e.message);
+    } finally {
+    console.log("No matter what we will see this statement");
+    }

@@ -1,0 +1,62 @@
+<style>
+        #main {
+            background: green;
+        }
+        .container {
+            background: blue;
+        }
+        div {
+            background: red;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main">
+        I AM A DIV!
+    </div>
+
+    container is a class on the single div element and main is an id on that div element... so we have 3 conflicting rules. Which one wins? The element styling? The class styling? The id styling?
+
+Selector	Weighting
+element	1
+class	10
+id	100
+inline-style	1000
+!important	10000+    
+________ANOTHER EXAMPLE_________
+   div.container {
+            background: green;
+        }
+        body div {
+            background: red;
+        }
+        div.container#main {
+            background: purple;
+        }
+        body #main {
+            background: magenta;
+        }
+        .container {
+            background: blue;   
+        }
+        div {
+            background: yellow;
+            height: 200px;
+            width: 200px;
+        }
+        body div.container#main {
+            background: brown;
+        }
+        
+Which one wins? Try to calculate point values for each one! (1 for each element selector, 10 for each class selector and 100 for each id selector)
+
+Selector	Weighting
+div	1
+body div	2
+.container	10
+div.container	11
+body #main	101
+div.container#main	111
+body div.container#main	112
