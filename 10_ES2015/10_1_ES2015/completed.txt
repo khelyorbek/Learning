@@ -1,0 +1,13 @@
+Completed this module.
+No code written.
+
+Some notes:
+Full list > http://es6-features.org/
+
+The website is extra convoluded but you can go to https://www.ecma-international.org/publications-and-standards/standards/ to find the standards
+
+Here is a latest ECMA of full spec > https://262.ecma-international.org/12.0/
+
+Here is the repo > https://github.com/tc39
+
+Entire proposal process > https://tc39.es/process-document/
