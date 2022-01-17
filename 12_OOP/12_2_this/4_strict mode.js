@@ -18,9 +18,14 @@ class Cat {
     }
 }
 
+// will return everything correctly
 const rocket = new Cat('rocket','tabby');
 rocket.dance('tango');
 
+// will return underfined
+// because we are referring to a class
+// and classes run in strict mode
 const rocketDance = rocket.dance;
 rocketDance('tango');
 
+// Learn more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
