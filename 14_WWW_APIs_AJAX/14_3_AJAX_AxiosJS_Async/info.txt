@@ -1,0 +1,11 @@
+https://hackorsnoozev3.docs.apiary.io/#
+
+https://reqres.in/
+
+https://swapi.dev/api/
+
+https://github.com/axios/axios
+
+https://axios-http.com/docs/intro
+
+https://www.toptal.com/developers/postbin/
