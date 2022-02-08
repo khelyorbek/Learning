@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Lucky Page{% endblock %}
+
+{% block content %}
+
+    <h1>Your lucky number is: {{lucky_num}}</h1>
+    <p>{{msg}}</p>
+
+    {% if lucky_num == 3 %}
+        <h2>That's my lucky number too!</h2>
+        <img src="https://media.makeameme.org/created/sometimes-you-just-5b3d43.jpg" alt="">
+    {% else %}
+        <h2>I don't like that number!</h2>
+        <img src="https://memegenerator.net/img/instances/50356514.jpg" alt="">
+    {% endif %}
+{% endblock %}}

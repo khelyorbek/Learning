@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Greeter Form{% endblock %}
+
+{% block content %}
+    <h1>Greeter Form</h1>
+    <!-- If we leave action to blank, it will sent a GET request and not POST -->
+    <!-- action="/greet" will redirect us to the /greet page and pass the values of the form as a query to it -->
+    <form action="/greet">
+        <input type="text" name="username" placeholder="Your name">
+        <button>Submit!</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Greeter Form 2 {% endblock %}
+
+{% block content %}
+    <h1>Greeter Form v2</h1>
+    <!-- If we leave action to blank, it will sent a GET request and not POST -->
+    <!-- action="/greet" will redirect us to the /greet page and pass the values of the form as a query to it -->
+    <form action="/greet-2">
+        <input type="text" name="username" placeholder="Your name">
+        <label for="compliments">Do you want compliments?</label>
+        <!-- 
+        name is what gets passed in the Query string
+        id is what used for the label -->
+        <input type="checkbox" name="wants_compliments" id="compliments">
+        <button>Submit!</button>
+    </form>
+{% endblock %}
