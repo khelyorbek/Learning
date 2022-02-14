@@ -1,0 +1,13 @@
+=== Tutorials ===
+https://www.markdowntutorial.com/
+https://www.markdownguide.org/basic-syntax/
+https://code.visualstudio.com/docs/languages/markdown
+
+=== Desktop Applications ===
+https://wereturtle.github.io/ghostwriter/
+https://typora.io/#windows
+https://macdown.uranusjr.com/ (Mac only)
+
+=== VS Code Extensions === 
+https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint
+https://marketplace.visualstudio.com/items?itemName=ms-vscode.Theme-MarkdownKit
