@@ -1,0 +1,25 @@
+___Creating a database___
+createdb dog_app_db
+
+___Running commands in a psql for a specific database___
+psql dog_app_db
+psql (12.9 (Ubuntu 12.9-0ubuntu0.20.04.1))
+Type "help" for help.
+
+dog_app_db=#
+
+___Seeding (importing data) a database___
+psql < my_database.sql
+
+___PSQL COMMANDS___
+\l - List all database
+\c DB_NAME - connect to DB_NAME
+\dt - List all tables (in current db)
+\d TABLE_NAME - Get details about TABLE_NAME (in current db)
+\q Quit psql (can also type CTRL+D)
+
+___DROPPING A DB (DELETING A DB)___
+dropdb my_database
+
+___BACKING UP A DB (to a sql file)___
+pg_dump -C -c -O my_database_name > backup.sql

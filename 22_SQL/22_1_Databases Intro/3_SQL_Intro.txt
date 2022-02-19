@@ -1,0 +1,17 @@
+- Writing SQL Commands
+- Other relational databases will use a 99% similar syntax
+- SQL is case sensitive. 'Bob' is not the same as 'bob'
+- Single quotes around string. Not double quotes
+- Everything ends with a semicolon. If you don't put a ; at the end of any command, IT WILL NOT EXECUTE
+- SQL commands are usually written in ALL CAPS like SELECT * FROM movies
+--- SELECT price FROM books 
+--- is exactly the same as 
+--- select price from books
+- It just makes it easy to distinguish SQL commands from variable / table / database names because SQL commands are in ALL CAPS
+
+
+
+
+
+
+
