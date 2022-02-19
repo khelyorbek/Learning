@@ -1,0 +1,42 @@
+___To install PostgreSQL___
+1. Go into WSL Ubuntu
+2. Make sure that sudo apt-get update and upgrade are done
+3. Make sure python3 is installed
+4. Install venv into python
+5. Activate venv using source venv/bin/activate
+6. Type this command to install it sudo apt-get install postgresql
+
+___To check the server status___
+(venv) sudo service postgresql status
+12/main (port 5432): down
+
+___To start the server in the background___ 
+You do this once, if you PC restarts, then you need to run this again
+(venv) sudo service postgresql start
+ * Starting PostgreSQL 12 database server
+
+___To stop the server___
+(venv) sudo service postgresql stop
+ * Stopping PostgreSQL 12 database serve
+
+___Opening the PostgreSQL shell___
+psql
+
+psql: error: FATAL:  role "khely" does not exist
+^^^ If you get this FATAL error, run the command below
+suo -u postgres createuser -s $(whoami); createdb $(whoami)
+
+psql: error: could not connect to server: No such file or directory
+        Is the server running locally and accepting
+        connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+^^^ If you get this error, that means the server is stopped and you need to start it
+
+
+psql
+psql (12.9 (Ubuntu 12.9-0ubuntu0.20.04.1))
+Type "help" for help.
+
+khely=#
+
+___Leaving the PostgreSQL shell___
+khely=# \q
