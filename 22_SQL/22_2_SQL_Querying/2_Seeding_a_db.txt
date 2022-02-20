@@ -1,0 +1,62 @@
+___The inside of the Library.sql file___
+khely@GHOST: $ cat library.sql
+
+___Checking the list of databases___
+khely@GHOST:$ psql
+khely=# \l
+
+                              List of databases
+   Name    |  Owner   | Encoding | Collate |  Ctype  |   Access privileges
+-----------+----------+----------+---------+---------+-----------------------
+ khely     | khely    | UTF8     | C.UTF-8 | C.UTF-8 |
+ postgres  | postgres | UTF8     | C.UTF-8 | C.UTF-8 |
+ template0 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+(4 rows)
+
+___Seeding the database (importing)___
+khely@GHOST:$ psql
+ < library.sql
+NOTICE:  database "library" does not exist, skipping
+DROP DATABASE
+CREATE DATABASE
+You are now connected to database "library" as user "khely".
+CREATE TABLE
+INSERT 0 40
+CREATE TABLE
+
+___Checking the list of databases to make sure it has been added___
+khely@GHOST:$ psql
+
+khely=# \l
+                              List of databases
+   Name    |  Owner   | Encoding | Collate |  Ctype  |   Access privileges
+-----------+----------+----------+---------+---------+-----------------------
+ khely     | khely    | UTF8     | C.UTF-8 | C.UTF-8 |
+ library   | khely    | UTF8     | C.UTF-8 | C.UTF-8 |
+ postgres  | postgres | UTF8     | C.UTF-8 | C.UTF-8 |
+ template0 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+(5 rows)
+
+
+___Entering the new database___
+khely=# \c library
+You are now connected to database "library" as user "khely".
+library=#
+
+You can also use
+Psql library from a regular shell
+
+___Checking a list of tables___
+library=# \dt
+         List of relations
+ Schema |   Name    | Type  | Owner
+--------+-----------+-------+-------
+ public | books     | table | khely
+ public | employees | table | khely
+(2 rows)
