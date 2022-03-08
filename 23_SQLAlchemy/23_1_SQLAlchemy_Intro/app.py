@@ -1,12 +1,12 @@
 from flask import Flask, request, render_template, redirect, flash, session
 from flask_debugtoolbar import DebugToolbarExtension
-from models import db, connect_db
+from models import db, connect_db, Pet
 
 app = Flask(__name__)
 
 # Telling FLASK to use PostgreSQL. Important to configure this before the db = SQLAlchemy() portion below.
 # Specifying which Database name to connect to (movies_example)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///movies_example'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///pet_shop_db'
 # Supressing the warning that gets displayed every time we run our database connection
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Printing all SQL statements to the console for debugging / learning
