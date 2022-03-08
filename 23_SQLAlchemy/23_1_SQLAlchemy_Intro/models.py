@@ -19,6 +19,16 @@ class Pet(db.Model):
     # Dunder for creating a table
     __tablename___ = "pets"
 
+    @classmethod
+    def get_by_species(cls, species):
+        # cls is the class
+        cls.query.filter_by(species=species).all()
+
+    @classmethod
+    def get_all_hungry(cls):
+        return cls.query.filter(Pet.hunger > 20).all()
+
+
     # Changing the output that we get when an object is instantiated
     def __repr__(self):
         p = self
@@ -31,5 +41,12 @@ class Pet(db.Model):
     breed = db.Column(db.String(30), nullable=True)
     hunger = db.Column(db.Integer,nullable=False,default=20)
 
-# USING OUR MODEL
-# Ye BOII
+    # Creating a custom method for interacting with DB
+    def greet(self):
+        return f"Hi, I am {self.name} the {self.species}"
+
+    def feed(self, amt=20):
+        """Update hunger based off of amt. Default value for amt if not passed = 20"""
+        self.hunger -= amt
+        # Picking 0 if hunger negative
+        self.hunger = max(self.hunger,0)
