@@ -4,8 +4,8 @@ from models import Pet, db
 from app import app
 
 # Create all tables
-db.drop_all()
-db.create_all()
+db.drop_all() # Drops all tables
+db.create_all() # Creates any tables from models
 
 # If table isn't empty, empty it
 Pet.query.delete()
