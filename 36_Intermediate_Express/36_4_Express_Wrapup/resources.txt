@@ -1,0 +1,58 @@
+-----TEMPLATING-----
+1) https://expressjs.com/en/resources/template-engines.html
+2) https://mozilla.github.io/nunjucks/ - heavily inspired by Jinja
+3) https://github.com/pugjs/pug - no HTML. Just text
+
+-----STATIC FILES-----
+https://expressjs.com/en/starter/static-files.html
+
+-----CSRF tokens and other concerns-----
+https://helmetjs.github.io/ - HELMET (security software)
+Comes with 13 safeguards. Enables 7 by default.
+Docs have useful articles that explain what type of attacks exist and what helmet does to prevent them.
+
+-----Authentication/Login-----
+https://www.passportjs.org/
+Acts as an adapter to implement different types of authentication. 500+ in fact.
+
+-----Cookie Parser-----
+https://github.com/expressjs/cookie-parser#readme
+
+-----Other node frameworks-----
+https://hapi.dev/
+https://sailsjs.com/
+https://koajs.com/
+
+-----Date / Time-----
+https://momentjs.com/
+https://momentjs.com/timezone/
+
+-----Validators-----
+https://github.com/validatorjs/validator.js
+
+-----Other useful methods-----
+https://lodash.com/
+
+-----Other data stores and databases-----
+  ---NoSQL---
+  https://www.mongodb.com/nosql-explained
+  https://www.mongodb.com/ > Document data store
+  https://couchdb.apache.org/
+  Learning SQL is a right first steps, then NoSQL databases are a good to know
+
+  ---Key/Value store---
+  https://redis.io/
+  In memory, not a file. Incredibly fast.
+  There are limits to storage (RAM)
+  Postgres read average is 11.18ms
+  Postgres write average is 8.58ms
+  Redis read average is 0.84ms
+  Redis write average is 0.49ms
+  Some companies use redis as an intermediate between regular database and redis database.
+  Example is twitter who had 300k reads and 6k write per second in 2013. 
+
+-----Websockets-----
+https://masteringjs.io/tutorials/express/websockets
+
+
+
