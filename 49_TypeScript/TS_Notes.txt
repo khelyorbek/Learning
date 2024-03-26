@@ -1,0 +1,69 @@
+_____ Playlist _____
+https://www.youtube.com/watch?v=d56mG7DezGs
+
+_____ JS vs TS _____
+TS = JS but with Type Checking (statically typed = similar to C++ I took in HS)
+
+TS also has code completion, refactoring, shorthand notation and new features (will end up in JS later). 
+
+Browser support is iffy for JS but TS allows us to use all the new features without worrying it being not supported in the Browser
+
+TS = Medium/Large Projects
+JS = Simple Projects
+
+_____ Installing TS _____
+#1 installs NVM (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+#2 download and install Node.js
+nvm install 20
+
+#3 verifies the right Node.js version is in the environment
+node -v # should print installed version
+
+#4 verifies the right NPM version is in the environment
+npm -v # should print installed version
+
+#5 installs TS
+npm i -g typescript
+
+#6 verify TS version
+tsc -v
+
+_____ Configuring TS compiler _____
+#1 Open the folder and init TS
+tsc --init
+
+#2 It should generate tsconfig.json
+
+#3 Open the tsconfig.json file and modify anything you need
+target -> Set the JavaScript language version.
+rootDir -> Specify the root folder within your TS files.
+outDir -> Output dir that will contain JS files.
+module -> Specify what module code is generated
+removeComments -> Purge comments from JS code
+noEmitOnError -> Stop compiler if there are errors in code
+sourceMap -> Creates a source map files for generated JS files
+
+#4 I will set these 
+"target": "es2016",
+"rootDir": "./src",
+"module": "commonjs",  
+"removeComments": true,
+"outDir": "./dist",
+"noEmitOnError": true,
+
+_____ Debugging TS code _____
+
+
+_____ How TS is transpiled to JS _____
+___ Example 1 ___
+TS: console.log("Hello");
+JS: console.log("Hello");
+
+___ Example 2 ___
+TS: let age: number = 20;
+JS: var age = 20;
+^ Here var is old style JS. Probably ES5.
+
+___ Example 3 ___
